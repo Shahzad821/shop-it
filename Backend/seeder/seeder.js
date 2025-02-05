@@ -7,7 +7,7 @@ const sendProducts = async () => {
   try {
     // Connect to MongoDB
     await mongoose.connect(
-      "mongodb+srv://mrdeveloper102:shizzi12@shopit.z7ga3.mongodb.net/ShopIt?retryWrites=true&w=majority&appName=shopit"
+     
     );
 
     // Delete all existing products in the collection
