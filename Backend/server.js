@@ -9,9 +9,9 @@ import errorHandler from "./middleware/error.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import path from "path";
-// import { fileURLToPath } from "url"; // Load environment variables from .env file
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = path.dirname(__filename);
+import { fileURLToPath } from "url"; // Load environment variables from .env file
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 dotenv.config();
 process.on("uncaughtException", (err) => {
   console.log("Error: ", err);
@@ -43,13 +43,13 @@ app.use("/api/v1/", authRouter);
 app.use("/api/v1/", orderRouter);
 app.use("/api/v1/", paymentRoute);
 app.use(errorHandler);
-// if (process.env.NODE_ENV === "PRODUCTION") {
-//   const staticPath = path.join(__dirname, "../Frontend/dist");
-//   app.use(express.static(staticPath));
-//   app.get("*", (req, res) => {
-//     res.sendFile(path.join(staticPath, "index.html"));
-//   });
-// }
+if (process.env.NODE_ENV === "PRODUCTION") {
+  const staticPath = path.join(__dirname, "../Frontend/dist");
+  app.use(express.static(staticPath));
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(staticPath, "index.html"));
+  });
+}
 // Start the server
 const server = app.listen(port, () => {
   console.log(
