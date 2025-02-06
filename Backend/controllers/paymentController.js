@@ -2,7 +2,7 @@ import Stripe from "stripe";
 import catchAsyncError from "../middleware/catchAsyncError.js";
 import Order from "../models/order.js";
 
-const stripe = Stripe(process.env.STRIPE_SECRET_KEY);
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
 export const stripeCheckoutSessions = catchAsyncError(
   async (req, res, next) => {
