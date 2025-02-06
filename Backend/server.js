@@ -44,7 +44,7 @@ app.use("/api/v1/", orderRouter);
 app.use("/api/v1/", paymentRoute);
 app.use(errorHandler);
 if (process.env.NODE_ENV === "PRODUCTION") {
-  const staticPath = path.join(__dirname, "../Frontend/dist");
+  const staticPath = path.join(__dirname, "../client/dist");
   app.use(express.static(staticPath));
   app.get("*", (req, res) => {
     res.sendFile(path.join(staticPath, "index.html"));
