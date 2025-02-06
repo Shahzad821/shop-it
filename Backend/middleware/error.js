@@ -1,4 +1,4 @@
-import ErrorHandler from "../utils/errorHandler.js";
+import ErrorHandler from "../utils/ErrorHandler.js";
 
 const errorHandler = (err, req, res, next) => {
   // Set the status code to 500 (Internal Server Error) by default
