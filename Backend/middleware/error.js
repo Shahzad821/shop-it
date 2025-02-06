@@ -1,6 +1,6 @@
 import ErrorHandler from "../utils/ErrorHandler.js";
 
-const errorHandler = (err, req, res, next) => {
+const errorHandle = (err, req, res, next) => {
   // Set the status code to 500 (Internal Server Error) by default
   let statusCode = err.statusCode || 500;
 
@@ -51,4 +51,4 @@ const errorHandler = (err, req, res, next) => {
   }
 };
 
-export default errorHandler;
+export default errorHandle;

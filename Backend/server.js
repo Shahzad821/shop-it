@@ -5,7 +5,7 @@ import productRouter from "./routes/product.js";
 import authRouter from "./routes/auth.js";
 import paymentRoute from "./routes/payment.js";
 import orderRouter from "./routes/order.js";
-import errorHandler from "./middleware/error.js";
+import errorHandle from "./middleware/error.js";
 import cookieParser from "cookie-parser";
 import cors from "cors";
 import path from "path";
@@ -42,7 +42,7 @@ app.use("/api/v1", productRouter);
 app.use("/api/v1/", authRouter);
 app.use("/api/v1/", orderRouter);
 app.use("/api/v1/", paymentRoute);
-app.use(errorHandler);
+app.use(errorHandle);
 if (process.env.NODE_ENV === "PRODUCTION") {
   const staticPath = path.join(__dirname, "../client/dist");
   app.use(express.static(staticPath));
