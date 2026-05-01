@@ -44,19 +44,24 @@ A complete, modern e-commerce platform built with **Node.js**, **Express**, **Mo
 > Add project screenshots here to showcase the application interface
 
 ### 1. Homepage / Product Listing
-[Add screenshot here]
+<img width="1365" height="634" alt="Home page" src="https://github.com/user-attachments/assets/ca9de549-3614-4b6f-88ee-7654b7a8d6ff" />
+
 
 ### 2. Product Details & Reviews
-[Add screenshot here]
+<img width="1361" height="636" alt="detail page" src="https://github.com/user-attachments/assets/1753b13c-d5aa-4c13-b073-43f51fe08bd4" />
+
 
 ### 3. Shopping Cart & Checkout
-[Add screenshot here]
+<img width="1360" height="638" alt="cart" src="https://github.com/user-attachments/assets/292461b0-e202-4ec0-8228-7c9737edb0e1" />
+
 
 ### 4. User Dashboard / Orders
-[Add screenshot here]
+<img width="1362" height="642" alt="user ordres" src="https://github.com/user-attachments/assets/09669d96-f462-4dc2-9d97-9f025e32be9e" />
+
 
 ### 5. Admin Dashboard
-[Add screenshot here]
+<img width="1363" height="638" alt="admin dashboard" src="https://github.com/user-attachments/assets/6bc671c0-a3b2-4f63-a2c8-9aa7280aa724" />
+
 
 ---
 
