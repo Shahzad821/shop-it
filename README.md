@@ -39,7 +39,28 @@ A complete, modern e-commerce platform built with **Node.js**, **Express**, **Mo
 
 ---
 
-## 🛠️ Tech Stack
+## � Screenshots
+
+> Add project screenshots here to showcase the application interface
+
+### 1. Homepage / Product Listing
+[Add screenshot here]
+
+### 2. Product Details & Reviews
+[Add screenshot here]
+
+### 3. Shopping Cart & Checkout
+[Add screenshot here]
+
+### 4. User Dashboard / Orders
+[Add screenshot here]
+
+### 5. Admin Dashboard
+[Add screenshot here]
+
+---
+
+## �🛠️ Tech Stack
 
 ### Backend
 

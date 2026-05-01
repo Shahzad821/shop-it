@@ -1,16 +1,13 @@
 import mongoose from "mongoose"; // Import mongoose to connect to the database
 import Product from "../models/product.js"; // Import the Product model
 import products from "./data.js"; // Import the products data
-
-// Define the async function to send products to the database
+import dotenv from "dotenv"; // Import dotenv to load environment variables
+dotenv.config(); // Load environment variables from .env file
 const sendProducts = async () => {
   try {
-    // Connect to MongoDB
-    await mongoose.connect(
-     
-    );
+    const dbUrl = process.env.DB_PROD_URL || process.env.DB_LOCAL_URL;
+    await mongoose.connect(dbUrl);
 
-    // Delete all existing products in the collection
     await Product.deleteMany();
     console.log("All products deleted.");
 

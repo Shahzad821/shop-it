@@ -86,7 +86,7 @@ const productSchema = new mongoose.Schema(
     user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
-      required: true,
+      // required: true,
       // function () {
       //   return this.isNew; // Only require user when the product is being created (isNew)
       // },
@@ -108,7 +108,7 @@ const productSchema = new mongoose.Schema(
       default: Date.now,
     },
   },
-  { timestamps: true } // Add timestamps for createdAt and updatedAt
+  { timestamps: true }, // Add timestamps for createdAt and updatedAt
 );
 
 const Product = mongoose.model("Product", productSchema);
