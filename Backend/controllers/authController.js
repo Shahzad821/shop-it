@@ -97,7 +97,7 @@ export const forgotPassword = catchAsyncError(async (req, res, next) => {
     await user.save();
 
     return next(
-      new ErrorHandler(error?.message || "Something went wrong", 500)
+      new ErrorHandler(error?.message || "Something went wrong", 500),
     );
   }
 });
@@ -140,8 +140,8 @@ export const updatePassword = catchAsyncError(async (req, res, next) => {
     return next(
       new ErrorHandler(
         "New password cannot be the same as current password",
-        400
-      )
+        400,
+      ),
     );
   }
   user.password = req.body.newPassword;
@@ -216,7 +216,7 @@ export const uploadAvatar = catchAsyncError(async (req, res, next) => {
     { avatar: avatarResponse },
     {
       new: true,
-    }
+    },
   );
   res.status(200).json({ user });
 });

@@ -1,4 +1,4 @@
-export default (user, statusCode, res) => {
+const sendToken = (user, statusCode, res) => {
   const token = user.getJWTToken();
 
   const options = {
@@ -11,3 +11,4 @@ export default (user, statusCode, res) => {
     token, // Sending token as part of the response
   });
 };
+export default sendToken;

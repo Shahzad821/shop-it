@@ -1,23 +1,25 @@
 import mongoose from "mongoose";
 
-export const ConnectDb = () => {
+const ConnectDB = async () => {
   let DBURL = "";
 
-  // Set DB URL based on environment
-  if (process.env.NODE_ENV == "DEVELOPMENT") {
-    DBURL = process.env.DB_LOCAL_URL; // Local development DB URL
-  }
-  if (process.env.NODE_ENV == "PRODUCTION") {
-    DBURL = process.env.DB_PRODUCTION_URL; // Replace with your actual production DB URL environment variable
-  }
+  try {
+    DBURL =
+      process.env.NODE_ENV === "DEVELOPMENT"
+        ? process.env.DB_LOCAL_URL
+        : process.env.DB_PROD_URL;
 
-  // Try to connect to the database
-  mongoose
-    .connect(DBURL)
-    .then((con) => {
-      console.log("Connected to Mongoose database:", con.connection.host);
-    })
-    .catch((error) => {
-      console.error("Error connecting to database:", error);
-    });
+    if (!DBURL) {
+      throw new Error("Database URL is not defined.");
+    }
+
+    const con = await mongoose.connect(DBURL);
+
+    console.log(`MongoDB Connected: ${con.connection.host}`);
+  } catch (error) {
+    console.error(`Error connecting to MongoDB: ${error.message}`);
+    process.exit(1);
+  }
 };
+
+export default ConnectDB;

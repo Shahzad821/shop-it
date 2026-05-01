@@ -162,13 +162,13 @@ const getSalesData = async (startDate, endDate) => {
     };
   });
 
-  return { salesMap, totalSales, totalOrders, finalDatesData };
+  return { totalSales, totalOrders, finalDatesData };
 };
 
 export const getSales = catchAsyncError(async (req, res, next) => {
   try {
-    const startDate = new Date(req.query.startDate);
-    const endDate = new Date(req.query.endDate);
+    let startDate = new Date(req.query.startDate);
+    let endDate = new Date(req.query.endDate);
 
     // Check for valid date range
     if (isNaN(startDate) || isNaN(endDate)) {
@@ -182,8 +182,10 @@ export const getSales = catchAsyncError(async (req, res, next) => {
     endDate.setUTCHours(23, 59, 59, 999);
 
     // Fetch sales data
-    const { salesMap, totalSales, totalOrders, finalDatesData } =
-      await getSalesData(startDate, endDate);
+    const { totalSales, totalOrders, finalDatesData } = await getSalesData(
+      startDate,
+      endDate
+    );
 
     // Respond with the fetched data
     res.status(200).json({

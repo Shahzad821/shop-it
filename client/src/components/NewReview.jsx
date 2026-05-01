@@ -15,7 +15,7 @@ const NewReview = ({ productId }) => {
   const checkCanReview = async () => {
     try {
       const response = await axios.post(
-        `/api/v1/can_review/?productId=${productId}`
+        `/api/v1/can_review/?productId=${productId}`,
       );
 
       setCanSubmitReview(response.data.canReview); // Set review eligibility
@@ -53,7 +53,7 @@ const NewReview = ({ productId }) => {
       {/* Show the button only if the user can submit a review */}
       {canSubmitReview && (
         <button
-          className="px-6 py-2 bg-yellow-500 text-white rounded-lg mt-4"
+          className="px-6 py-2 bg-purple-500 text-white rounded-lg mt-4"
           onClick={openModal} // Open the modal on button click
         >
           Submit Your Review
@@ -95,7 +95,7 @@ const NewReview = ({ productId }) => {
 
               <button
                 onClick={handleReviewSubmit}
-                className="w-full mt-4 px-6 py-2 bg-yellow-500 text-white rounded-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full mt-4 px-6 py-2 bg-purple-500 text-white rounded-lg disabled:opacity-50 disabled:cursor-not-allowed"
                 disabled={loading || !comment} // Disable the button when loading or no comment
               >
                 {loading ? <Loader w={4} h={4} color="white" /> : "Submit"}

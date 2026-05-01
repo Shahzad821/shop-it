@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { FaShoppingCart } from "react-icons/fa";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { MdArrowDropDown } from "react-icons/md";
 import useLogout from "../hooks/useLogout";
 import Loader from "./loader";
@@ -41,18 +41,53 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="bg-slate-800 py-1 px-1  shadow-md ">
+    <header className="bg-slate-800 py-1 px-1  shadow-md sticky top-0 z-50">
       <div className=" mx-auto flex items-center justify-between container">
         {/* Logo */}
-        <div>
-          <Link to="/">
-            <img
-              src="/assets/shopit_logo.png" // Ensure this path is correct
-              alt="ShopIT Logo"
-              className="w-32 transition-all duration-300 hover:scale-110"
-            />
+        <div className="flex items-center w-32 transition-all duration-300 hover:scale-110">
+          <Link to="/" className="flex items-center gap-2 no-underline">
+            <div
+              className="flex items-center justify-center w-9 h-9 rounded-lg flex-shrink-0"
+              style={{
+                background: "linear-gradient(135deg, #C27AFF 0%, #9b4dff 100%)",
+                boxShadow: "0 0 14px rgba(194, 122, 255, 0.35)",
+              }}
+            >
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"
+                  stroke="#fff"
+                  strokeWidth="1.8"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M3 6h18M16 10a4 4 0 01-8 0"
+                  stroke="#fff"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </div>
+
+            {/* Brand text */}
+            <p
+              className="m-0 text-lg font-bold tracking-wide text-white leading-none"
+              style={{ fontFamily: "'Georgia', serif" }}
+            >
+              Buy{" "}
+              <span
+                className="italic"
+                style={{
+                  color: "#C27AFF",
+                  letterSpacing: "0.05em",
+                }}
+              >
+                IT
+              </span>
+            </p>
           </Link>
         </div>
+
         {/* Search Bar */}
         <div className="w-full md:w-1/2 mt-2 md:mt-0  mx-auto p-2 rounded-md hidden md:block">
           <form onSubmit={submitHandler}>
@@ -154,7 +189,7 @@ const Navbar = () => {
           )}
         </div>
       </div>
-    </nav>
+    </header>
   );
 };
 

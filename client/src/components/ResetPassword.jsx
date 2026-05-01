@@ -60,7 +60,7 @@ const ResetPassword = () => {
 
             <button
               type="submit"
-              className=" flex justify-center w-full  bg-yellow-600 py-3 text-white rounded-md hover:bg-yellow-700 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+              className=" flex justify-center w-full  bg-purple-600 py-3 text-white rounded-md bg-purple-400 focus:outline-none focus:ring-2 focus:ring-yellow-500"
               disabled={loading}
             >
               {loading ? <Loader w={6} h={6} color="white" /> : "Set Password"}

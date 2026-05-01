@@ -36,7 +36,7 @@ const ListUsers = () => {
   const filteredUsers = users.filter(
     (user) =>
       user._id.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      user.name?.toLowerCase().includes(searchTerm.toLowerCase())
+      user.name?.toLowerCase().includes(searchTerm.toLowerCase()),
   );
 
   // Pagination logic
@@ -70,7 +70,7 @@ const ListUsers = () => {
       }
     } catch (error) {
       toast.error(
-        error?.response.data.message || error.message || "Error deleting user."
+        error?.response.data.message || error.message || "Error deleting user.",
       );
     }
   };
@@ -207,7 +207,7 @@ const ListUsers = () => {
           </span>
           <button
             onClick={() => handlePageChange(currentPage + 1)}
-            className={`px-4 py-2 bg-yellow-500 text-white rounded hover:bg-yellow-600 ${
+            className={`px-4 py-2 bg-purple-500 text-white rounded hover:bg-purple-600 ${
               currentPage === totalPages ? "cursor-not-allowed opacity-50" : ""
             }`}
             disabled={currentPage === totalPages}

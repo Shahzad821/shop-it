@@ -184,7 +184,7 @@ const ProductForm = () => {
 
           <button
             type="submit"
-            className="w-full py-2 bg-yellow-500 text-white rounded hover:bg-yellow-600"
+            className="w-full py-2 bg-purple-500 text-white rounded hover:bg-purple-600"
           >
             {loading ? "Creating..." : "Create Product"}
           </button>

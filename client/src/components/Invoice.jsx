@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { FaPrint } from "react-icons/fa6";
 import { jsPDF } from "jspdf";
-import html2canvas from "html2canvas";
+import html2canvas from "html2canvas-pro"; // Instead of 'html2canvas'
 import useGetOrdersDetails from "../hooks/getOrderDetails";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
@@ -120,15 +120,15 @@ const Invoice = () => {
             </div>
             {/* Company Info */}
             <div id="company" className="text-right">
-              <div>ShopIT</div>
+              <div>BuyIt</div>
               <div>455 Foggy Heights, AZ 85004, US</div>
               <div>(602) 519-0450</div>
               <div>
                 <a
-                  href="mailto:info@shopit.com"
+                  href="mailto:info@buyit.com"
                   className="text-blue-500 hover:underline"
                 >
-                  info@shopit.com
+                  info@buyit.com
                 </a>
               </div>
             </div>
@@ -152,7 +152,9 @@ const Invoice = () => {
               <tbody>
                 {orderDetail?.orderItems?.map((item, index) => (
                   <tr key={index}>
-                    <td className="border px-4 py-2">{item?.product}</td>
+                    <td className="border px-4  py-2">
+                      <p>{item?.product}</p>
+                    </td>
                     <td className="border px-4 py-2 text-sm">
                       <p className="line-clamp-2 break-words">{item?.name}</p>
                     </td>

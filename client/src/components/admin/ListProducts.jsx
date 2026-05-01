@@ -18,7 +18,7 @@ const ListProducts = () => {
   const filteredProducts = products.filter(
     (product) =>
       product._id.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      product.name.toLowerCase().includes(searchTerm.toLowerCase())
+      product.name.toLowerCase().includes(searchTerm.toLowerCase()),
   );
 
   // Pagination logic
@@ -27,7 +27,7 @@ const ListProducts = () => {
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
   const currentProducts = filteredProducts.slice(
     indexOfFirstItem,
-    indexOfLastItem
+    indexOfLastItem,
   );
 
   const handlePageChange = (newPage) => {
@@ -51,7 +51,7 @@ const ListProducts = () => {
       const res = await axios.delete(`/api/v1/delete/product/${id}`);
       if (res.status === 204) {
         setProducts((prevProducts) =>
-          prevProducts.filter((product) => product._id !== id)
+          prevProducts.filter((product) => product._id !== id),
         );
         toast.success("products deleted!");
       }
@@ -157,7 +157,7 @@ const ListProducts = () => {
                         className="border-green-500 border text-green-500 p-2 rounded-sm"
                         onClick={() =>
                           navigate(
-                            `/admin/product/${product?._id}/upload_images`
+                            `/admin/product/${product?._id}/upload_images`,
                           )
                         }
                       >
@@ -202,7 +202,7 @@ const ListProducts = () => {
           </span>
           <button
             onClick={() => handlePageChange(currentPage + 1)}
-            className={`px-4 py-2 bg-yellow-500 text-white rounded hover:bg-yellow-600 ${
+            className={`px-4 py-2 bg-purple-500 text-white rounded hover:bg-purple-600 ${
               currentPage === totalPages ? "cursor-not-allowed opacity-50" : ""
             }`}
             disabled={currentPage === totalPages}

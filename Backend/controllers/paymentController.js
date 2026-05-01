@@ -141,6 +141,7 @@ export const stripeWebhook = catchAsyncError(async (req, res, next) => {
 
       // Save the order to the database
       const order = new Order(orderData);
+
       await order.save();
 
       res.status(200).json({ success: true });

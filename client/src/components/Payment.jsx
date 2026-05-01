@@ -96,7 +96,7 @@ const PaymentMethod = () => {
             <button
               disabled={!paymentMethod}
               type="submit"
-              className=" disabled:cursor-not-allowed w-full py-2 bg-yellow-500 text-white font-semibold rounded-md hover:bg-yellow-600 transition duration-300"
+              className=" disabled:cursor-not-allowed w-full py-2 bg-purple-500 text-white font-semibold rounded-md hover:bg-purple-600 transition duration-300"
             >
               {loading || isLoading ? "Loading..." : "Continue"}
             </button>

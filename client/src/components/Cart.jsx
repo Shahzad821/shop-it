@@ -76,7 +76,7 @@ const Cart = () => {
                           onClick={() =>
                             handleQuantityChange(
                               item.product,
-                              item.quantity - 1
+                              item.quantity - 1,
                             )
                           }
                           disabled={item.quantity === 1}
@@ -89,7 +89,7 @@ const Cart = () => {
                           onClick={() =>
                             handleQuantityChange(
                               item.product,
-                              item.quantity + 1
+                              item.quantity + 1,
                             )
                           }
                           disabled={item.quantity == item.stock}
@@ -129,7 +129,7 @@ const Cart = () => {
                 </p>
                 <hr className="my-2" />
                 <button
-                  className="btn w-full py-2 bg-yellow-600 text-white rounded-lg"
+                  className="btn w-full py-2 bg-purple-600 text-white rounded-lg"
                   onClick={() =>
                     user ? navigate("/shipping") : navigate("/login")
                   }

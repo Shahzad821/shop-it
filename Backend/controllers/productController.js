@@ -1,12 +1,12 @@
 import catchAsyncError from "../middleware/catchAsyncError.js";
 import Product from "../models/product.js";
-import APIFilter from "../utils/apiFilter.js";
 import ErrorHandler from "../utils/ErrorHandler.js"; // Assuming the path is correct
 import Order from "../models/order.js";
 import uploadFile, { deleteFile } from "../utils/cloudinary.js";
+import APIFilter from "../utils/apiFilter.js";
 // Controller to get all products
 export const getAllProducts = catchAsyncError(async (req, res, next) => {
-  const resperpage = 4;
+  const resperpage = 5;
 
   // Initialize the API filter and apply search and filters methods
   const apiFilter = new APIFilter(Product, req.query)
@@ -84,7 +84,7 @@ export const uploadImage = catchAsyncError(async (req, res, next) => {
     return next(new ErrorHandler("No images provided", 400));
   }
 
-  const uploader = async (image) => uploadFile(image, "shopIt/products");
+  const uploader = async (image) => uploadFile(image, "shopit/products");
 
   const urls = await Promise.all(req.body.images.map(uploader));
 
@@ -114,7 +114,7 @@ export const deleteProductImage = catchAsyncError(async (req, res, next) => {
   if (isDeleted.success) {
     // Filter out the image with the matching public_id
     product.images = product.images.filter(
-      (image) => image.public_id.toString() !== req.body.imgId.toString()
+      (image) => image.public_id.toString() !== req.body.imgId.toString(),
     );
     // Save the updated product
     await product.save();
@@ -157,7 +157,7 @@ export const createProductReview = catchAsyncError(async (req, res, next) => {
 
   // Check if the user has already reviewed the product
   const alreadyReviewed = product.reviews.find(
-    (r) => r.user.toString() === req.user._id.toString()
+    (r) => r.user.toString() === req.user._id.toString(),
   );
 
   if (alreadyReviewed) {
@@ -216,7 +216,7 @@ export const deleteReview = catchAsyncError(async (req, res, next) => {
 
   // Remove the review from the product's reviews array
   product.reviews = product?.reviews?.filter(
-    (review) => review?._id.toString() !== reviewId.toString()
+    (review) => review?._id.toString() !== reviewId.toString(),
   );
 
   // Update the number of reviews for the product

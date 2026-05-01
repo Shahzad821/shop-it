@@ -108,7 +108,7 @@ const ConfirmOrder = () => {
             <hr className="my-2 " />
             <button
               onClick={() => navigate("/payment-method")}
-              className="w-full py-2 bg-yellow-600 text-white rounded-md hover:bg-yellow-700"
+              className="w-full py-2 bg-purple-600 text-white rounded-md bg-purple-400"
             >
               Proceed to Payment
             </button>

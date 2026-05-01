@@ -75,7 +75,7 @@ const UpdateProduct = () => {
       setLoading(true);
       const response = await axios.put(
         `/api/v1/update/product/${id}`, // PUT request to update product
-        product
+        product,
       );
 
       // Check if request was successful
@@ -206,7 +206,7 @@ const UpdateProduct = () => {
 
           <button
             type="submit"
-            className="w-full py-2 bg-yellow-500 text-white rounded hover:bg-yellow-600"
+            className="w-full py-2 bg-purple-500 text-white rounded hover:bg-purple-600"
           >
             {loading ? "Updating..." : "Update Product"}
           </button>

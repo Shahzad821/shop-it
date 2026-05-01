@@ -72,7 +72,7 @@ const UploadImages = () => {
       // Upload the new images
       const response = await axios.put(
         `/api/v1/admin/product/${id}/upload_images`,
-        { images: newImages }
+        { images: newImages },
       );
 
       if (response.status === 200) {
@@ -95,13 +95,13 @@ const UploadImages = () => {
     try {
       const response = await axios.put(
         `/api/v1/admin/product/${id}/delete_images`,
-        { imgId }
+        { imgId },
       );
 
       if (response.status === 200) {
         // Remove the image from the UI after successful deletion
         setUploadedImages((prevImages) =>
-          prevImages.filter((image) => image.public_id !== imgId)
+          prevImages.filter((image) => image.public_id !== imgId),
         );
         toast.success("Image deleted successfully!");
       }
@@ -138,7 +138,7 @@ const UploadImages = () => {
                 type="file"
                 id="product_images"
                 name="product_images"
-                className="block w-full mt-2 text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:border-0 file:bg-yellow-500 file:text-white file:rounded-md"
+                className="block w-full mt-2 text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:border-0 file:bg-purple-500 file:text-white file:rounded-md"
                 multiple
                 onChange={handleFileChange}
                 onClick={handleResetInputChange}
@@ -211,7 +211,7 @@ const UploadImages = () => {
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full py-2 bg-yellow-600 text-white rounded-md hover:bg-yellow-700"
+              className="w-full py-2 bg-purple-600 text-white rounded-md bg-purple-400"
               disabled={loading}
             >
               {loading ? "Uploading..." : "Upload"}

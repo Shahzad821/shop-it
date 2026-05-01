@@ -1,4 +1,3 @@
-import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Navabar from "./components/header";
 import Footer from "./components/footer";
@@ -20,7 +19,7 @@ const App = () => {
       <Navabar />
       <Search />
 
-      <div className="container mx-auto my-5">
+      <div className="container mx-auto px-4">
         <Routes>
           {userRoute}
           {adminRoute}
@@ -28,8 +27,6 @@ const App = () => {
         </Routes>
       </div>
 
-      {/* Footer component */}
-      <Footer />
       <Toaster />
     </>
   );

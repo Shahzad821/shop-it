@@ -18,8 +18,8 @@ const Dashboard = () => {
       // Send POST request with startDate and endDate as ISO strings in the query
       const response = await axios.get(
         `/api/v1/admin/get_sales?startDate=${new Date(
-          startDate
-        ).toISOString()}&endDate=${new Date(endDate).toISOString()}`
+          startDate,
+        ).toISOString()}&endDate=${new Date(endDate).toISOString()}`,
       );
 
       const data = response.data;
@@ -69,7 +69,7 @@ const Dashboard = () => {
           {/* Fetch Button */}
           <button
             onClick={fetchData} // Call fetchData function on click
-            className="bg-yellow-500 text-white w-full md:w-auto md:py-3 px-6 py-3 text-sm rounded-md mt-3 sm:mt-0 hover:bg-yellow-600 transition-colors"
+            className="bg-purple-500 text-white w-full md:w-auto md:py-3 px-6 py-3 text-sm rounded-md mt-3 sm:mt-0 hover:bg-purple-600 transition-colors"
           >
             {loading ? "Fetching..." : "Fetch "} {/* Corrected button text */}
           </button>

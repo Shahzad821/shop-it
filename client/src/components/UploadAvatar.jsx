@@ -70,7 +70,7 @@ const AvatarUpload = () => {
 
             <button
               type="submit"
-              className="w-full py-2 px-4 bg-yellow-500 text-white font-semibold rounded-md disabled:opacity-50 flex justify-center"
+              className="w-full py-2 px-4 bg-purple-500 text-white font-semibold rounded-md disabled:opacity-50 flex justify-center"
               disabled={!avatar || loading}
             >
               {loading ? <Loader w="6" h="6" color="white" /> : "Update"}

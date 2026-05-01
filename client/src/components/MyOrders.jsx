@@ -18,7 +18,7 @@ const MyOrders = () => {
   // Check for order_success in query params, clear cart, and redirect if needed.
   useEffect(() => {
     const order_success = searchParams.get("order_success");
-    console.log(order_success);
+
     if (order_success) {
       dispatch(clearCart());
       navigate("/me/orders");
@@ -37,7 +37,7 @@ const MyOrders = () => {
         order?.paymentInfo?.status
           ?.toLowerCase()
           .includes(searchTerm.toLowerCase()) ||
-        order?.orderStatus?.toLowerCase().includes(searchTerm.toLowerCase())
+        order?.orderStatus?.toLowerCase().includes(searchTerm.toLowerCase()),
     ) || [];
 
   // Pagination logic.
@@ -210,7 +210,7 @@ const MyOrders = () => {
           </span>
           <button
             onClick={() => handlePageChange(currentPage + 1)}
-            className={`px-4 py-2 bg-yellow-500 text-white rounded hover:bg-yellow-600 ${
+            className={`px-4 py-2 bg-purple-500 text-white rounded hover:bg-purple-600 ${
               currentPage === totalPages ? "cursor-not-allowed opacity-50" : ""
             }`}
             disabled={currentPage === totalPages}

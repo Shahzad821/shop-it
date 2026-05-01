@@ -61,7 +61,7 @@ const UpdatePassword = () => {
             <button
               disabled={loading}
               type="submit"
-              className="w-full text-white p-2 rounded-md bg-yellow-600 transition flex justify-center disabled:opacity-50"
+              className="w-full text-white p-2 rounded-md bg-purple-600 transition flex justify-center disabled:opacity-50"
             >
               {loading ? (
                 <Loader w={6} h={6} color="white" />

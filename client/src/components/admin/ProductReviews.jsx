@@ -19,7 +19,7 @@ const ProductReviews = () => {
       toast.error(
         error.response?.data?.message ||
           error.message ||
-          "Failed to fetch reviews. Try again."
+          "Failed to fetch reviews. Try again.",
       );
     }
     setLoading(false);
@@ -28,7 +28,7 @@ const ProductReviews = () => {
   const handleDelete = async (reviewId) => {
     try {
       const res = await axios.delete(
-        `/api/v1/admin/reviews?reviewId=${reviewId}&productId=${productId}`
+        `/api/v1/admin/reviews?reviewId=${reviewId}&productId=${productId}`,
       );
 
       if (res.status == 200) {
@@ -39,7 +39,7 @@ const ProductReviews = () => {
       toast.error(
         error.response?.data?.message ||
           error.message ||
-          "Failed to delete review. Try again."
+          "Failed to delete review. Try again.",
       );
     }
   };
@@ -67,7 +67,7 @@ const ProductReviews = () => {
 
             <button
               type="submit"
-              className="w-full py-2 px-4 bg-yellow-500 text-white font-semibold rounded-lg hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full py-2 px-4 bg-purple-500 text-white font-semibold rounded-lg hover:bg-purple-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
               disabled={loading}
             >
               {loading ? "Loading..." : "SEARCH"}

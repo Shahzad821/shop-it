@@ -129,7 +129,7 @@ const ShippingForm = () => {
 
             <button
               type="submit"
-              className="w-full py-2 bg-yellow-600 text-white font-semibold rounded-md hover:bg-yellow-700"
+              className="w-full py-2 bg-purple-600 text-white font-semibold rounded-md bg-purple-400"
             >
               Continue
             </button>

@@ -1,6 +1,6 @@
 export const resetEmailTemplate = (
   username,
-  resetUrl
+  resetUrl,
 ) => `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
   <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
@@ -450,10 +450,10 @@ export const resetEmailTemplate = (
               <tr>
                 <td class="email-masthead">
                   <a
-                    href="https://shopit.com"
+                    href="https://buyit.com"
                     class="f-fallback email-masthead_name"
                   >
-                    ShopIT
+                    BuyIt
                   </a>
                 </td>
               </tr>
@@ -479,7 +479,7 @@ export const resetEmailTemplate = (
                           <h1>Hi ${username},</h1>
                           <p>
                             You recently requested to reset your password for your
-                            ShopIT account. Use the button below to reset it.
+                            BuyIt account. Use the button below to reset it.
                             <strong
                               >This password reset is only valid for the next 30
                               minutes.</strong
@@ -523,7 +523,7 @@ export const resetEmailTemplate = (
                             <a href="{{support_url}}">contact support</a> if you
                             have questions.
                           </p>
-                          <p>Thanks, <br />The ShopIT team</p>
+                          <p>Thanks, <br />The BuyIt team</p>
   
                           <table class="body-sub" role="presentation">
                             <tr>
@@ -558,7 +558,9 @@ export const resetEmailTemplate = (
                     <tr>
                       <td class="content-cell" align="center">
                         <p class="f-fallback sub align-center">
-                          ShopIT
+                         BuyIt Inc. <br />1234 Street Rd. <br />Suite 1234
+                        </p>
+                      </td>
                           <br />1234 Street Rd. <br />Suite 1234
                         </p>
                       </td>

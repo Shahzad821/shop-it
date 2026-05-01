@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback } from "react";
 import MetaData from "./helmet";
 import Item from "./item";
 import Skeleton from "./skeleton";
@@ -11,24 +11,23 @@ const Home = () => {
   const [data, setData] = useState([]);
   const [searchParams] = useSearchParams();
 
-  // Get `page` and `keyword` from the search params
   const page = searchParams.get("page") || 1;
   const keyword = searchParams.get("keyword") || "";
 
   const skeletonCount = 10;
   const skeleton = Array.from({ length: skeletonCount });
 
-  // Memoize the getProducts function to avoid re-creation on every render
   const getProducts = useCallback(async (page, keyword) => {
     setLoading(true);
     try {
       const res = await fetch(
-        `/api/v1/products?page=${page}&keyword=${keyword}`
+        `/api/v1/products?page=${page}&keyword=${keyword}`,
       );
 
       const data = await res.json();
       if (!res.ok) {
         toast.error(data.error || "Failed to fetch products");
+        return;
       }
       setData(data);
     } catch (error) {
@@ -40,7 +39,7 @@ const Home = () => {
 
   useEffect(() => {
     getProducts(page, keyword);
-  }, [page, keyword, getProducts]); // Depend only on page and keyword
+  }, [page, keyword, getProducts]);
 
   return (
     <>

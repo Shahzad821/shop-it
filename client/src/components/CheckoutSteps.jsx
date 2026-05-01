@@ -9,7 +9,7 @@ const CheckoutSteps = () => {
         to="/shipping"
         className="float-right mt-2 mt-md-0 w-full md:w-1/4 lg:w-1/5 flex flex-col items-center"
       >
-        <div className="step active-step bg-yellow-500 text-white p-2 rounded-md clip-right-side">
+        <div className="step active-step bg-purple-500 text-white p-2 rounded-md clip-right-side">
           Shipping
         </div>
       </Link>
@@ -30,7 +30,7 @@ const CheckoutSteps = () => {
         to="/confirm_order"
         className="float-right mt-2 mt-md-0 w-full md:w-1/3 lg:w-3/12 flex flex-col items-center"
       >
-        <div className="step active-step bg-yellow-500 text-white p-2 rounded-md clip-right-side">
+        <div className="step active-step bg-purple-500 text-white p-2 rounded-md clip-right-side">
           Confirm Order
         </div>
       </Link>
@@ -51,7 +51,7 @@ const CheckoutSteps = () => {
         to="/payment_method"
         className="float-right mt-2 mt-md-0 w-full md:w-1/4 lg:w-1/5 flex flex-col items-center"
       >
-        <div className="step active-step bg-yellow-500 text-white p-2 rounded-md clip-right-side">
+        <div className="step active-step bg-purple-500 text-white p-2 rounded-md clip-right-side">
           Payment
         </div>
       </Link>
